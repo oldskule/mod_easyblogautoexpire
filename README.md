@@ -69,24 +69,13 @@ Meaning: Any post older than 30 days will be archived automatically.
 ## 🛠 How It Works
 1. The plugin checks EasyBlog posts against each enabled rule.
 2. If the post’s age exceeds the rule’s days-to-expire, the chosen action is applied.
-3. In **Development Mode**, the plugin only logs actions—it does not change posts.
+3. In **Development Mode**, the plugin only logs actions to admin logs folder—it does not change posts.
 
 ---
 
 ## ✅ Best Practices
 - Test with **Development Mode = Yes** before applying live changes.
 - Use different rules for different content types.
-- Consider using Joomla’s **Scheduled Tasks** to run checks automatically.
-
----
-
-## 🆘 Troubleshooting
-- **No posts expiring?**  
-  - Check the plugin is enabled.  
-  - Ensure the rule is enabled and days are correct.  
-  - Turn Development Mode off for live changes.
-- **Too many posts expired at once?**  
-  - Review your days-to-expire values.
 
 ---
 
@@ -96,9 +85,3 @@ Meaning: Any post older than 30 days will be archived automatically.
 - 9 configurable rules
 - Development mode
 - EasyBlog disable/archive/both actions
-
----
-
-## 📬 Support
-- Website: [https://mamboschools.com](https://mamboschools.com)  
-- Email: [info@mamboschools.com](mailto:info@mamboschools.com)
