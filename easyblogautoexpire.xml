@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_EASYBLOGAUTOEXPIRE</name>
+	<version>1.0.1</version>
+	<creationDate>August 2025</creationDate>
+	<author>mamboSchools</author>
+	<authorEmail>info@mamboschools.com</authorEmail>
+	<authorUrl>https://mamboschools.com</authorUrl>
+	<copyright>Copyright (C) 2025. All rights reserved.</copyright>
+	<license>GNU/GPL</license>
+	<description>PLG_SYSTEM_EASYBLOGAUTOEXPIRE_XML_DESCRIPTION</description>
+	
+	<namespace path="src">Joomla\Plugin\System\EasyBlogAutoExpire</namespace>
+	
+	<files>
+		<folder>services</folder>
+		<folder>src</folder>
+		<filename>index.html</filename>
+	</files>
+	
+	<languages folder="language">
+		<language tag="en-GB">en-GB/plg_system_easyblogautoexpire.ini</language>
+		<language tag="en-GB">en-GB/plg_system_easyblogautoexpire.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_BASIC_LABEL">
+				<field
+					name="info"
+					type="note"
+					label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_INFO_LABEL"
+					description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_INFO_DESC" />
+				<field
+					name="development_mode"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_DEVELOPMENT_MODE_LABEL"
+					description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_DEVELOPMENT_MODE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<!-- Rule 1 -->
+			<fieldset name="rule1" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE1_LABEL">
+				<field name="rule1_enabled" type="radio" class="btn-group btn-group-yesno" default="0" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="rule1_title" type="text" default="" filter="string" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_DESC" />
+				<field name="rule1_days" type="number" default="30" min="1" max="3650" filter="int" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_DESC" />
+				<field name="rule1_action" type="list" default="disable" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_DESC">
+					<option value="disable">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_DISABLE</option>
+					<option value="archive">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_ARCHIVE</option>
+					<option value="both">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_BOTH</option>
+				</field>
+			</fieldset>
+
+			<!-- Rule 2 -->
+			<fieldset name="rule2" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE2_LABEL">
+				<field name="rule2_enabled" type="radio" class="btn-group btn-group-yesno" default="0" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="rule2_title" type="text" default="" filter="string" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_DESC" />
+				<field name="rule2_days" type="number" default="30" min="1" max="3650" filter="int" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_DESC" />
+				<field name="rule2_action" type="list" default="disable" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_DESC">
+					<option value="disable">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_DISABLE</option>
+					<option value="archive">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_ARCHIVE</option>
+					<option value="both">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_BOTH</option>
+				</field>
+			</fieldset>
+
+			<!-- Rule 3 -->
+			<fieldset name="rule3" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE3_LABEL">
+				<field name="rule3_enabled" type="radio" class="btn-group btn-group-yesno" default="0" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="rule3_title" type="text" default="" filter="string" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_DESC" />
+				<field name="rule3_days" type="number" default="30" min="1" max="3650" filter="int" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_DESC" />
+				<field name="rule3_action" type="list" default="disable" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_DESC">
+					<option value="disable">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_DISABLE</option>
+					<option value="archive">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_ARCHIVE</option>
+					<option value="both">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_BOTH</option>
+				</field>
+			</fieldset>
+
+			<!-- Rule 4 -->
+			<fieldset name="rule4" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE4_LABEL">
+				<field name="rule4_enabled" type="radio" class="btn-group btn-group-yesno" default="0" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="rule4_title" type="text" default="" filter="string" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_DESC" />
+				<field name="rule4_days" type="number" default="30" min="1" max="3650" filter="int" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_DESC" />
+				<field name="rule4_action" type="list" default="disable" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_DESC">
+					<option value="disable">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_DISABLE</option>
+					<option value="archive">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_ARCHIVE</option>
+					<option value="both">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_BOTH</option>
+				</field>
+			</fieldset>
+
+			<!-- Rule 5 -->
+			<fieldset name="rule5" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE5_LABEL">
+				<field name="rule5_enabled" type="radio" class="btn-group btn-group-yesno" default="0" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="rule5_title" type="text" default="" filter="string" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_DESC" />
+				<field name="rule5_days" type="number" default="30" min="1" max="3650" filter="int" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_DESC" />
+				<field name="rule5_action" type="list" default="disable" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_DESC">
+					<option value="disable">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_DISABLE</option>
+					<option value="archive">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_ARCHIVE</option>
+					<option value="both">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_BOTH</option>
+				</field>
+			</fieldset>
+
+			<!-- Rule 6 -->
+			<fieldset name="rule6" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE6_LABEL">
+				<field name="rule6_enabled" type="radio" class="btn-group btn-group-yesno" default="0" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="rule6_title" type="text" default="" filter="string" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_DESC" />
+				<field name="rule6_days" type="number" default="30" min="1" max="3650" filter="int" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_DESC" />
+				<field name="rule6_action" type="list" default="disable" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_DESC">
+					<option value="disable">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_DISABLE</option>
+					<option value="archive">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_ARCHIVE</option>
+					<option value="both">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_BOTH</option>
+				</field>
+			</fieldset>
+
+			<!-- Rule 7 -->
+			<fieldset name="rule7" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE7_LABEL">
+				<field name="rule7_enabled" type="radio" class="btn-group btn-group-yesno" default="0" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="rule7_title" type="text" default="" filter="string" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_DESC" />
+				<field name="rule7_days" type="number" default="30" min="1" max="3650" filter="int" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_DESC" />
+				<field name="rule7_action" type="list" default="disable" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_DESC">
+					<option value="disable">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_DISABLE</option>
+					<option value="archive">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_ARCHIVE</option>
+					<option value="both">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_BOTH</option>
+				</field>
+			</fieldset>
+
+			<!-- Rule 8 -->
+			<fieldset name="rule8" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE8_LABEL">
+				<field name="rule8_enabled" type="radio" class="btn-group btn-group-yesno" default="0" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="rule8_title" type="text" default="" filter="string" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_DESC" />
+				<field name="rule8_days" type="number" default="30" min="1" max="3650" filter="int" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_DESC" />
+				<field name="rule8_action" type="list" default="disable" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_DESC">
+					<option value="disable">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_DISABLE</option>
+					<option value="archive">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_ARCHIVE</option>
+					<option value="both">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_BOTH</option>
+				</field>
+			</fieldset>
+
+			<!-- Rule 9 -->
+			<fieldset name="rule9" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE9_LABEL">
+				<field name="rule9_enabled" type="radio" class="btn-group btn-group-yesno" default="0" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ENABLED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="rule9_title" type="text" default="" filter="string" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_TITLE_DESC" />
+				<field name="rule9_days" type="number" default="30" min="1" max="3650" filter="int" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_DAYS_DESC" />
+				<field name="rule9_action" type="list" default="disable" label="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_LABEL" description="PLG_SYSTEM_EASYBLOGAUTOEXPIRE_RULE_ACTION_DESC">
+					<option value="disable">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_DISABLE</option>
+					<option value="archive">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_ARCHIVE</option>
+					<option value="both">PLG_SYSTEM_EASYBLOGAUTOEXPIRE_ACTION_BOTH</option>
+				</field>
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>
