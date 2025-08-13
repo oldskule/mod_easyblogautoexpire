@@ -21,7 +21,7 @@
 
 ## 📋 Requirements
 - **Joomla**: 5.x (may work on 4.x but not officially tested)
-- **EasyBlog**: Installed and configured
+- **EasyBlog**: Default crontab setup required to trigger this plugin.
 - **PHP**: 7.4+ (tested up to 8.3)
 
 ---
