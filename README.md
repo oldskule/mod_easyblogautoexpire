@@ -1,6 +1,6 @@
 # EasyBlog Auto Expire – Joomla 5 Plugin
 
-**EasyBlog Auto Expire** is a Joomla 5 system plugin that automates the process of disabling or archiving of specific EasyBlog posts after a specified number of days. The selection is made using a search string against the title of the blog post.
+**EasyBlog Auto Expire** is a Joomla 5 system plugin that automates the process of disabling or archiving of specific EasyBlog posts in StackIdeas Easyblog after a specified number of days. The selection is made using a search string against the title of the blog post.
 
 ---
 
